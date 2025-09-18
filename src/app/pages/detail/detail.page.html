@@ -1,0 +1,37 @@
+<section class="detail" *ngIf="photo as p">
+  <div class="media">
+    <img [src]="p.largeImageURL" [alt]="p.tags.join(', ')" />
+  </div>
+  <aside class="info">
+    <div class="user">
+      <img class="avatar" [src]="p.user.avatarUrl" [alt]="p.user.name" />
+      <div>
+        <h2>{{ p.user.name }}</h2>
+        <p>{{ p.width }} x {{ p.height }} • {{ p.type }} • {{ p.orientation }}</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><strong>{{ p.views }}</strong><span>Views</span></div>
+      <div><strong>{{ p.downloads }}</strong><span>Downloads</span></div>
+      <div><strong>{{ p.likes }}</strong><span>Likes</span></div>
+      <div><strong>{{ p.comments }}</strong><span>Comments</span></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn" [href]="p.webformatURL" target="_blank" rel="noopener">Free Download</a>
+      <a class="btn outline" [href]="p.largeImageURL" target="_blank" rel="noopener">Large (JPG)</a>
+    </div>
+
+    <div class="tags">
+      <span *ngFor="let t of p.tags">#{{ t }}</span>
+    </div>
+  </aside>
+</section>
+
+<section class="related" *ngIf="related.length">
+  <h3>Related Images</h3>
+  <div class="grid">
+  <app-photo-card *ngFor="let r of related" [photo]="r"></app-photo-card>
+  </div>
+</section>

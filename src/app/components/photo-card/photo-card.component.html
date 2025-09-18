@@ -1,0 +1,17 @@
+<a class="card" [routerLink]="['/photo', photo.id]" aria-label="Open details">
+  <img [src]="photo.previewURL" [alt]="photo.tags.join(', ')" loading="lazy" />
+  <div class="meta">
+    <div class="user">
+      <img class="avatar" [src]="photo.user.avatarUrl" [alt]="photo.user.name" />
+      <span>{{ photo.user.name }}</span>
+    </div>
+    <div class="stats">
+      <span>❤ {{ photo.likes }}</span>
+      <span>⬇ {{ photo.downloads }}</span>
+      <span>👁 {{ photo.views }}</span>
+    </div>
+  </div>
+  <div class="tags">
+    <span *ngFor="let t of photo.tags">#{{ t }}</span>
+  </div>
+</a>

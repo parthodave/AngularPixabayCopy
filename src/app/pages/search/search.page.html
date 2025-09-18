@@ -1,0 +1,21 @@
+<app-header [query]="query()" (search)="onSearch($event)"></app-header>
+
+<app-filters [state]="filters()" (stateChange)="onFiltersChange($event)"></app-filters>
+
+<section class="results">
+  <div class="summary">
+    <h2>{{ results().total }} Free {{ query() }} Images</h2>
+  <p>Showing page {{ results().page }} of {{ totalPages() }}</p>
+  </div>
+
+  <div class="grid">
+    <app-photo-card *ngFor="let p of results().hits" [photo]="p"></app-photo-card>
+  </div>
+
+  <app-pagination
+    [page]="results().page"
+    [perPage]="results().perPage"
+    [total]="results().total"
+    (pageChange)="onPageChange($event)"
+  ></app-pagination>
+</section>

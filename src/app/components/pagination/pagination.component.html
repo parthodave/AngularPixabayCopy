@@ -1,0 +1,5 @@
+<div class="pager" *ngIf="pageCount > 1">
+  <button [disabled]="page===1" (click)="pageChange.emit(page-1)">Prev</button>
+  <button *ngFor="let p of pages()" [class.active]="p===page" (click)="pageChange.emit(p)">{{ p }}</button>
+  <button [disabled]="page===pageCount" (click)="pageChange.emit(page+1)">Next</button>
+</div>

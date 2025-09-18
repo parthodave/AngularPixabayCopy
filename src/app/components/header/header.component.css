@@ -1,0 +1,16 @@
+.site-header { background: #0b1120; color: #fff; }
+.site-header .container { display:flex; align-items:center; gap:1rem; padding:0.75rem 1rem; }
+.logo { color:#fff; text-decoration:none; font-weight:700; }
+.search { display:flex; gap:0.5rem; margin-left:auto; }
+.search input { padding:0.5rem 0.75rem; border-radius:6px; border:1px solid #334155; background:#111827; color:#e5e7eb; }
+.search button { padding:0.5rem 0.75rem; border-radius:6px; border:1px solid #334155; background:#2563eb; color:#fff; }
+.nav a { color:#cbd5e1; text-decoration:none; margin-left:1rem; }
+.subnav { display:flex; gap:1rem; padding:0.5rem 1rem; background:#111827; border-top:1px solid #1f2937; border-bottom:1px solid #1f2937; }
+.subnav a { color:#94a3b8; text-decoration:none; }
+.subnav a.active { color:#fff; }
+.hero { padding:2rem 1rem; text-align:center; background:linear-gradient(135deg,#0b1120,#111827); }
+.hero h1 { margin:0 0 .5rem; font-size:1.6rem; }
+.hero-search { padding:0 1rem 1.25rem; display:flex; justify-content:center; }
+.hero-form { display:flex; gap:.5rem; }
+.hero-form input { padding:.6rem .8rem; width: min(680px, 75vw); border-radius:8px; border:1px solid #334155; background:#0b1120; color:#e5e7eb; }
+.hero-form button { padding:.6rem .9rem; border-radius:8px; border:1px solid #334155; background:#22c55e; color:#0b1120; font-weight:600; }

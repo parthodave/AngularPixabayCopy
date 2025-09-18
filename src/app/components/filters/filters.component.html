@@ -1,0 +1,48 @@
+<div class="filters">
+  <label>
+    Type
+    <select [(ngModel)]="state.type" (change)="update()">
+      <option value="all">All</option>
+      <option value="photo">Photos</option>
+      <option value="illustration">Illustrations</option>
+      <option value="vector">Vectors</option>
+    </select>
+  </label>
+
+  <label>
+    Orientation
+    <select [(ngModel)]="state.orientation" (change)="update()">
+      <option value="all">All</option>
+      <option value="horizontal">Horizontal</option>
+      <option value="vertical">Vertical</option>
+    </select>
+  </label>
+
+  <label>
+    Order
+    <select [(ngModel)]="state.order" (change)="update()">
+      <option value="popular">Popular</option>
+      <option value="latest">Latest</option>
+    </select>
+  </label>
+
+  <label>
+    Color
+    <select [(ngModel)]="state.colors" (change)="update()">
+      <option *ngFor="let c of photos.colors" [value]="c">{{ c }}</option>
+    </select>
+  </label>
+
+  <label>
+    Category
+    <select [(ngModel)]="state.category" (change)="update()">
+      <option value="all">all</option>
+      <option *ngFor="let c of photos.categories()" [value]="c">{{ c }}</option>
+    </select>
+  </label>
+
+  <label class="row">
+    <input type="checkbox" [(ngModel)]="state.safeSearch" (change)="update()" />
+    <span>Safe search</span>
+  </label>
+</div>

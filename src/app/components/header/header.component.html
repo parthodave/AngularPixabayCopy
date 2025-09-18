@@ -1,0 +1,35 @@
+<header class="site-header">
+  <div class="container">
+    <a class="logo" routerLink="/photos/search/nature">PixaMock</a>
+    <form class="search" (submit)="onSubmit($event)">
+      <input
+        type="text"
+        placeholder="Search images..."
+        [(ngModel)]="query"
+        name="q"
+        required
+      />
+      <button type="submit">Search</button>
+    </form>
+    <nav class="nav">
+      <a routerLink="/photos/search/nature">Photos</a>
+      <a href="https://pixabay.com/photos/" target="_blank" rel="noopener">Original</a>
+    </nav>
+  </div>
+  <div class="subnav">
+    <a class="active" routerLink="/photos/search/nature">Images</a>
+    <a href="#">Videos</a>
+    <a href="#">Music</a>
+    <a href="#">Sound Effects</a>
+  </div>
+  <div class="hero">
+    <h1>Stunning free images & royalty-free stock</h1>
+    <p>Powered by hardcoded mock data, no API needed.</p>
+  </div>
+  <div class="hero-search">
+    <form (submit)="onSubmit($event)" class="hero-form">
+      <input type="text" placeholder="Search nature" [(ngModel)]="query" name="hq" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
